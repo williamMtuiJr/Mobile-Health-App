@@ -51,13 +51,15 @@ class CircularProgress extends StatelessWidget {
                   new CircularSegmentEntry(
                     this.percentage,
 //                    CustomColors.completeColor,
-                    kColor8,
+                    //Logged colour
+                    Colors.green,
                     rankKey: 'completed',
                   ),
                   new CircularSegmentEntry(
                     100,
 //                    CustomColors.incompleteColor,
-                    kColor4,
+                    //backgroundcolour
+                    Color(0xFFF7F3F7),
                     rankKey: 'remaining',
                   ),
                 ],
@@ -71,7 +73,7 @@ class CircularProgress extends StatelessWidget {
               width: this.height * 0.78,
               height: this.height * 0.78,
               decoration: new BoxDecoration(
-                color: /*CustomColors.mainColor,*/ kBackgroundColour2,
+                color: /*CustomColors.mainColor,*/ Colors.white,
                 shape: BoxShape.circle,
               )),
           new Container(child: this.child)

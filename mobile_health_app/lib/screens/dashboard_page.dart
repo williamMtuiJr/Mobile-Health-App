@@ -41,11 +41,58 @@ class _DashboardPageState extends State<DashboardPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            Card(
               child: CircularProgress(
                 child: Text('400KCal'),
                 height: 200.0,
                 percentage: 45.0,
+              ),
+            ),
+            Card(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ListTile(
+                          leading: Icon(Icons.restaurant_menu),
+                          title: Text('Food'),
+                        ),
+                      ),
+                      Expanded(
+                        child: RaisedButton(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width / 12,
+                          ),
+                          shape: RoundedRectangleBorder(
+//            side: BorderSide(width: 10.0),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          elevation: 0.0,
+                          color: kBackgroundColour2,
+                          onPressed: () {
+                            //Load Available Chat Groups
+                          },
+                          child: Text('Browse Chat Groups'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Text('66Kcal'),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: LinearProgressIndicator(
+                          value: 100.0,
+                          backgroundColor: Colors.green,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
             CustomCard(

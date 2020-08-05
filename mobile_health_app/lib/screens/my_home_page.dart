@@ -135,7 +135,6 @@ class InstaList extends StatelessWidget {
                     new IconButton(
                       icon: Icon(
                         Icons.more_vert,
-                        color: Colors.pink,
                       ),
                       onPressed: null,
                     )
@@ -159,7 +158,6 @@ class InstaList extends StatelessWidget {
                       children: <Widget>[
                         new Icon(
                           FontAwesomeIcons.heart,
-                          color: Colors.pink,
                         ),
                         new SizedBox(
                           width: 16.0,
@@ -274,7 +272,10 @@ class FeedTypeB extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(FontAwesomeIcons.heart),
+                Icon(
+                  FontAwesomeIcons.heart,
+                  color: Colors.pinkAccent,
+                ),
                 SizedBox(),
                 Text('15.6k'),
               ],

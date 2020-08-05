@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './../constants.dart';
 
 class DrawerItems extends StatelessWidget {
   const DrawerItems({
@@ -13,7 +14,7 @@ class DrawerItems extends StatelessWidget {
         children: const <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: kBackgroundColour2,
             ),
             child: Text(
               'Drawer Header',

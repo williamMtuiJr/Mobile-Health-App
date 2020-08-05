@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   static List<Widget> _widgetOptions = <Widget>[
     MyHomePage(),
-    Testing3(),
+//    Testing3(),
     DashboardPage(),
     CommunityPage(),
   ];
@@ -70,17 +70,17 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.home,
                     text: 'Home',
                   ),
-                  GButton(
-                    icon: Icons.date_range,
-                    text: 'Plans',
-                  ),
+//                  GButton(
+//                    icon: Icons.date_range,
+//                    text: 'Plans',
+//                  ),
                   GButton(
                     icon: Icons.assessment,
-                    text: 'Search',
+                    text: 'Health',
                   ),
                   GButton(
                     icon: Icons.people,
-                    text: 'Profile',
+                    text: 'Community',
                   ),
                 ],
                 selectedIndex: _selectedIndex,
