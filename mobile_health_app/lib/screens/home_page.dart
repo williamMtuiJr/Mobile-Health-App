@@ -3,10 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //import './../constants.dart';
 //import './../components/app_bar_items.dart';
 import 'dashboard_page.dart';
-import 'community_page.dart';
+//import 'community_page.dart';
 import 'my_home_page.dart';
 import 'test.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'plans_page.dart';
 
 class HomePage extends StatefulWidget {
   static String id = '/Seventh';
@@ -23,9 +24,11 @@ class _HomePageState extends State<HomePage> {
 
   static List<Widget> _widgetOptions = <Widget>[
     DashboardPage(),
+
+    PlansPage(),
     Testing4(),
     MyHomePage(),
-    CommunityPage(),
+//    CommunityPage(),
   ];
 
   void _onItemTapped(int index) {

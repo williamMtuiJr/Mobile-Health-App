@@ -5,7 +5,107 @@ import './../constants.dart';
 //import './../components/app_bar_items.dart';
 //import 'insights.dart';
 import 'chat_groups_intro.dart';
-import 'discussions_intro.dart';
+//import 'discussions_intro.dart';
+import 'my_home_page.dart';
+
+class Testing4 extends StatefulWidget {
+  @override
+  _Testing4State createState() => _Testing4State();
+}
+
+class _Testing4State extends State<Testing4>
+    with SingleTickerProviderStateMixin {
+  ScrollController _scrollViewController;
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(vsync: this, length: 2);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+//  bool _showAppbar = true;
+//  ScrollController _scrollBottomBarController = new ScrollController();
+//  bool isScrollingDown = false;
+//  bool _show = true;
+//  double bottomBarHeight = 75;
+//  double _bottomBarOffset = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: NestedScrollView(
+        controller: _scrollViewController,
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            new SliverAppBar(
+              leading: Builder(builder: (BuildContext context) {
+                return GestureDetector(
+                  onTap: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: Container(
+                    child: Icon(
+                      FontAwesomeIcons.bell,
+                      color: Colors.black87,
+                    ),
+                    padding: EdgeInsets.all(7.0),
+                  ),
+                );
+              }),
+              backgroundColor: Colors.white,
+              title: SizedBox(
+                child: Center(
+                  child: Text(
+                    'Insights',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ),
+              actions: [
+                SizedBox(
+                  width: 15.0,
+                ),
+                Icon(
+                  FontAwesomeIcons.questionCircle,
+                  color: Colors.black87,
+                ),
+                SizedBox(
+                  width: 15.0,
+                ),
+              ],
+              pinned: true,
+              floating: true,
+              forceElevated: innerBoxIsScrolled,
+              bottom: TabBar(
+                labelColor: Colors.black87,
+                indicatorColor: kBackgroundColour2,
+                tabs: <Tab>[
+                  Tab(text: "For You"),
+                  Tab(text: "Courses"),
+                ],
+                controller: _tabController,
+              ),
+            ),
+          ];
+        },
+        body: new TabBarView(
+          children: <Widget>[
+            MyHomePage(),
+            ChatGroups(),
+          ],
+          controller: _tabController,
+        ),
+      ),
+    );
+  }
+}
 
 //class Testing3 extends StatelessWidget {
 //  Testing3({Key key}) : super(key: key);
@@ -134,102 +234,3 @@ import 'discussions_intro.dart';
 //    );
 //  }
 //}
-
-class Testing4 extends StatefulWidget {
-  @override
-  _Testing4State createState() => _Testing4State();
-}
-
-class _Testing4State extends State<Testing4>
-    with SingleTickerProviderStateMixin {
-  ScrollController _scrollViewController;
-  TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = new TabController(vsync: this, length: 2);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-//  bool _showAppbar = true;
-//  ScrollController _scrollBottomBarController = new ScrollController();
-//  bool isScrollingDown = false;
-//  bool _show = true;
-//  double bottomBarHeight = 75;
-//  double _bottomBarOffset = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: NestedScrollView(
-        controller: _scrollViewController,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            new SliverAppBar(
-              leading: Builder(builder: (BuildContext context) {
-                return GestureDetector(
-                  onTap: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  child: Container(
-                    child: Icon(
-                      FontAwesomeIcons.bell,
-                      color: Colors.black87,
-                    ),
-                    padding: EdgeInsets.all(7.0),
-                  ),
-                );
-              }),
-              backgroundColor: Colors.white,
-              title: SizedBox(
-                child: Center(
-                  child: Text(
-                    'Community',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-              ),
-              actions: [
-                SizedBox(
-                  width: 15.0,
-                ),
-                Icon(
-                  FontAwesomeIcons.questionCircle,
-                  color: Colors.black87,
-                ),
-                SizedBox(
-                  width: 15.0,
-                ),
-              ],
-              pinned: true,
-              floating: true,
-              forceElevated: innerBoxIsScrolled,
-              bottom: TabBar(
-                labelColor: Colors.black87,
-                indicatorColor: kBackgroundColour2,
-                tabs: <Tab>[
-                  Tab(text: "For You"),
-                  Tab(text: "Courses"),
-                ],
-                controller: _tabController,
-              ),
-            ),
-          ];
-        },
-        body: new TabBarView(
-          children: <Widget>[
-            new Discussions(),
-            new ChatGroups(),
-          ],
-          controller: _tabController,
-        ),
-      ),
-    );
-  }
-}

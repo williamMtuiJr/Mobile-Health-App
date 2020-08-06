@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import './../components/app_bar_items.dart';
+//import './../components/app_bar_items.dart';
 import './../constants.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -29,14 +29,28 @@ class _MyHomePageState extends State<MyHomePage> {
 //          );
 //        }),
 //        backgroundColor: Colors.white,
-//        title: Text(
-//          'Home',
-//          style: TextStyle(
-//            color: Colors.black87,
+//        title: Center(
+//          child: Text(
+//            'Chats',
+//            style: TextStyle(
+//              color: Colors.black87,
+//            ),
 //          ),
 //        ),
+//        actions: [
+//          SizedBox(
+//            width: 15.0,
+//          ),
+//          Icon(
+//            FontAwesomeIcons.questionCircle,
+//            color: Colors.black87,
+//          ),
+//          SizedBox(
+//            width: 15.0,
+//          ),
+//        ],
 //      ),
-      drawer: DrawerItems(),
+//      drawer: DrawerItems(),
       body: FeedsBody(),
     );
   }
@@ -56,7 +70,7 @@ class _FeedsBodyState extends State<FeedsBody> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Flexible(
-          flex: 3,
+          flex: 1,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -182,30 +196,95 @@ class InstaList extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      'Interests',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        'see all',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: kBackgroundColour2,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          'Interests',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0,
+                          ),
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            'see all',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: kBackgroundColour2,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 20.0),
+                    height: MediaQuery.of(context).size.height / 4,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 5,
+                                width: 160.0,
+                                color: Colors.red,
+                              ),
+                            ),
+                            Text('Sleep'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 5,
+                                width: 160.0,
+                                color: Colors.blue,
+                              ),
+                            ),
+                            Text('Sleep'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 5,
+                                width: 160.0,
+                                color: Colors.greenAccent,
+                              ),
+                            ),
+                            Text('Sleep'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 5,
+                                width: 160.0,
+                                color: Colors.yellow,
+                              ),
+                            ),
+                            Text('Sleep'),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
