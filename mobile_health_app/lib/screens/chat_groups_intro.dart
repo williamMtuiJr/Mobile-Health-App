@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './../constants.dart';
+//import './../constants.dart';
+import './../components/course_card.dart';
 
 class ChatGroups extends StatefulWidget {
   @override
@@ -14,25 +15,23 @@ class _ChatGroupsState extends State<ChatGroups> {
         SizedBox(
           height: 20.0,
         ),
-        RaisedButton(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width / 9,
-          ),
-          shape: RoundedRectangleBorder(
-//            side: BorderSide(width: 10.0),
-              borderRadius: BorderRadius.circular(20.0)),
-          elevation: 0.0,
-          color: kBackgroundColour2,
-          onPressed: () {
-            //Load Available Chat Groups
-          },
-          child: Text('Browse Chat Groups'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: CourseCard(
+//              color: Colors.teal,
+                text: 'The Ultimate Baby Formula',
+              ),
+            ),
+            Expanded(
+              child: CourseCard(
+//              color: Colors.purple,
+                text: 'The Ultimate Baby Formula',
+              ),
+            ),
+          ],
         ),
-//        ListView(
-//          children: [
-//            //Display loaded chat groups
-//          ],
-//        ),
       ],
     );
   }

@@ -1,29 +1,7 @@
 import 'package:flutter/material.dart';
-import './../constants.dart';
-//import 'package:flutter_pedometer/Constants/Colors.dart' as CustomColors;
+//import './../constants.dart';
+////import 'package:flutter_pedometer/Constants/Colors.dart' as CustomColors;
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
-
-//class Dashboard extends StatefulWidget {
-//  @override
-//  _DashboardState createState() => _DashboardState();
-//}
-//
-//class _DashboardState extends State<Dashboard> {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Column(
-//      children: [
-//        Container(
-//          child: CircularProgress(
-//            child: Text('Yolo'),
-//            height: 20.0,
-//            percentage: 25.0,
-//          ),
-//        ),
-//      ],
-//    );
-//  }
-//}
 
 class CircularProgress extends StatelessWidget {
   final Widget child;

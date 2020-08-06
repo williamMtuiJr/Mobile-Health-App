@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'discussions_intro.dart';
+//import 'discussions_intro.dart';
 import 'chat_groups_intro.dart';
-import './../constants.dart';
+import 'my_home_page.dart';
+//import './../constants.dart';
 import './../components/stretched_toggle_button.dart';
 
 class CommunityPage extends StatefulWidget {
@@ -72,12 +73,12 @@ class _CommunityPageState extends State<CommunityPage> {
               StretchedToggleButton(
                 isSelected: isSelected,
                 toggleIndex: 0,
-                label: 'Discussions',
+                label: 'For You',
               ),
               StretchedToggleButton(
                 isSelected: isSelected,
                 toggleIndex: 1,
-                label: 'Chat Groups',
+                label: 'Courses',
               ),
             ],
             onPressed: (int index) {
@@ -96,7 +97,7 @@ class _CommunityPageState extends State<CommunityPage> {
             isSelected: isSelected,
           ),
           Flexible(
-            child: isSelected[0] ? Discussions() : ChatGroups(),
+            child: isSelected[0] ? MyHomePage() : ChatGroups(),
           ),
         ],
       ),

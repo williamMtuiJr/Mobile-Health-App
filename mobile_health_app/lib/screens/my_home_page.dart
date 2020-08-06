@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './../components/app_bar_items.dart';
+import './../constants.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -11,29 +12,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Builder(builder: (BuildContext context) {
-          return GestureDetector(
-            onTap: () {
-              Scaffold.of(context).openDrawer();
-            },
-            child: Container(
-              child: Icon(
-                Icons.view_headline,
-                color: Colors.black87,
-              ),
-              padding: EdgeInsets.all(7.0),
-            ),
-          );
-        }),
-        backgroundColor: Colors.white,
-        title: Text(
-          'Home',
-          style: TextStyle(
-            color: Colors.black87,
-          ),
-        ),
-      ),
+//      appBar: AppBar(
+//        elevation: 0.5,
+//        leading: Builder(builder: (BuildContext context) {
+//          return GestureDetector(
+//            onTap: () {
+//              Scaffold.of(context).openDrawer();
+//            },
+//            child: Container(
+//              child: Icon(
+//                Icons.view_headline,
+//                color: Colors.black87,
+//              ),
+//              padding: EdgeInsets.fromLTRB(7.0, 7.0, 7.0, 0.0),
+//            ),
+//          );
+//        }),
+//        backgroundColor: Colors.white,
+//        title: Text(
+//          'Home',
+//          style: TextStyle(
+//            color: Colors.black87,
+//          ),
+//        ),
+//      ),
       drawer: DrawerItems(),
       body: FeedsBody(),
     );
@@ -50,35 +52,110 @@ class _FeedsBodyState extends State<FeedsBody> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
+//      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Flexible(
-          flex: 1,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          flex: 3,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Text(
-                  'Discover',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    'FILTER',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+//              ListView(scrollDirection: Axis.horizontal, children: [
+//                Row(
+//                  children: [
+//                    Column(
+//                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                      crossAxisAlignment: CrossAxisAlignment.center,
+//                      children: [
+//                        Container(
+//                          height: MediaQuery.of(context).size.height / 4,
+//                          width: MediaQuery.of(context).size.height / 4,
+//                          decoration: new BoxDecoration(
+//                            shape: BoxShape.circle,
+//                            image: new DecorationImage(
+//                              fit: BoxFit.fill,
+//                              image: AssetImage("images/chw_image.jpg"),
+//                            ),
+//                          ),
+//                        ),
+//                        SizedBox(
+//                          height: 15.0,
+//                        ),
+//                        Padding(
+//                          padding: const EdgeInsets.all(8.0),
+//                          child: Text(
+//                            'Sleep',
+//                            style: TextStyle(
+//                              color: Colors.white,
+//                              fontSize: 16.0,
+//                            ),
+//                          ),
+//                        ),
+//                      ],
+//                    ),
+//                    Column(
+//                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                      crossAxisAlignment: CrossAxisAlignment.center,
+//                      children: [
+//                        Container(
+//                          height: MediaQuery.of(context).size.height / 4,
+//                          width: MediaQuery.of(context).size.height / 4,
+//                          decoration: new BoxDecoration(
+//                            shape: BoxShape.circle,
+//                            image: new DecorationImage(
+//                              fit: BoxFit.fill,
+//                              image: AssetImage("images/chw_image.jpg"),
+//                            ),
+//                          ),
+//                        ),
+//                        SizedBox(
+//                          height: 15.0,
+//                        ),
+//                        Padding(
+//                          padding: const EdgeInsets.all(8.0),
+//                          child: Text(
+//                            'Sleep',
+//                            style: TextStyle(
+//                              color: Colors.white,
+//                              fontSize: 16.0,
+//                            ),
+//                          ),
+//                        ),
+//                      ],
+//                    ),
+//                    Column(
+//                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                      crossAxisAlignment: CrossAxisAlignment.center,
+//                      children: [
+//                        Container(
+//                          height: MediaQuery.of(context).size.height / 4,
+//                          width: MediaQuery.of(context).size.height / 4,
+//                          decoration: new BoxDecoration(
+//                            shape: BoxShape.circle,
+//                            image: new DecorationImage(
+//                              fit: BoxFit.fill,
+//                              image: AssetImage("images/chw_image.jpg"),
+//                            ),
+//                          ),
+//                        ),
+//                        SizedBox(
+//                          height: 15.0,
+//                        ),
+//                        Padding(
+//                          padding: const EdgeInsets.all(8.0),
+//                          child: Text(
+//                            'Sleep',
+//                            style: TextStyle(
+//                              color: Colors.white,
+//                              fontSize: 16.0,
+//                            ),
+//                          ),
+//                        ),
+//                      ],
+//                    ),
+//                  ],
+//                ),
+//              ]),
             ],
           ),
         ),
@@ -105,8 +182,36 @@ class InstaList extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      'Interests',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'see all',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: kBackgroundColour2,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
+                padding: const EdgeInsets.fromLTRB(16.0, 0.0, 8.0, 16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[

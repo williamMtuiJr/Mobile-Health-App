@@ -25,6 +25,10 @@ const kColor8 = Color(0xFFF95C54);
 const kColor9 = Color(0xFF399DB8);
 const kColor10 = Color(0xFF537499);
 
+const kAppBarTextStyle = TextStyle(
+  color: Colors.black87,
+);
+
 const kSendButtonTextStyle = TextStyle(
   color: Colors.green,
   fontWeight: FontWeight.bold,

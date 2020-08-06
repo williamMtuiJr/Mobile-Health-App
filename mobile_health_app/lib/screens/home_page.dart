@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import './../constants.dart';
-import './../components/app_bar_items.dart';
+//import './../constants.dart';
+//import './../components/app_bar_items.dart';
 import 'dashboard_page.dart';
 import 'community_page.dart';
 import 'my_home_page.dart';
@@ -17,13 +17,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+//  static const TextStyle optionStyle =
+//      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   static List<Widget> _widgetOptions = <Widget>[
-    MyHomePage(),
-//    Testing3(),
     DashboardPage(),
+    Testing4(),
+    MyHomePage(),
     CommunityPage(),
   ];
 
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(13.0),
+        padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white,
@@ -55,8 +56,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.black.withOpacity(.1),
                 )
               ]),
-          child: SafeArea(
-              child: Padding(
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
                 gap: 8,
@@ -70,26 +70,27 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.home,
                     text: 'Home',
                   ),
-//                  GButton(
-//                    icon: Icons.date_range,
-//                    text: 'Plans',
-//                  ),
                   GButton(
-                    icon: Icons.assessment,
-                    text: 'Health',
+                    icon: Icons.date_range,
+                    text: 'Plans',
+                  ),
+                  GButton(
+                    icon: FontAwesomeIcons.map,
+                    text: 'Insights',
                   ),
                   GButton(
                     icon: Icons.people,
-                    text: 'Community',
+                    text: 'Chats',
                   ),
                 ],
                 selectedIndex: _selectedIndex,
                 onTabChange: (index) {
-                  setState(() {
-                    _selectedIndex = index;
-                  });
+//                  setState(() {
+////                    _selectedIndex = index;
+////                  });
+                  _onItemTapped(index);
                 }),
-          )),
+          ),
         ),
       ),
     ));
