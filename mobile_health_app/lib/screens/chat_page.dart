@@ -3,58 +3,21 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //import './../components/app_bar_items.dart';
 import './../constants.dart';
 
-class MyHomePage extends StatefulWidget {
+
+class ChatPage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ChatPageState createState() => _ChatPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      appBar: AppBar(
-//        elevation: 0.5,
-//        leading: Builder(builder: (BuildContext context) {
-//          return GestureDetector(
-//            onTap: () {
-//              Scaffold.of(context).openDrawer();
-//            },
-//            child: Container(
-//              child: Icon(
-//                Icons.view_headline,
-//                color: Colors.black87,
-//              ),
-//              padding: EdgeInsets.fromLTRB(7.0, 7.0, 7.0, 0.0),
-//            ),
-//          );
-//        }),
-//        backgroundColor: Colors.white,
-//        title: Center(
-//          child: Text(
-//            'Chats',
-//            style: TextStyle(
-//              color: Colors.black87,
-//            ),
-//          ),
-//        ),
-//        actions: [
-//          SizedBox(
-//            width: 15.0,
-//          ),
-//          Icon(
-//            FontAwesomeIcons.questionCircle,
-//            color: Colors.black87,
-//          ),
-//          SizedBox(
-//            width: 15.0,
-//          ),
-//        ],
-//      ),
-//      drawer: DrawerItems(),
       body: FeedsBody(),
     );
   }
 }
+
 
 class FeedsBody extends StatefulWidget {
   @override
@@ -184,13 +147,13 @@ class InstaList extends StatelessWidget {
   Widget build(BuildContext context) {
 //    var deviceSize = MediaQuery.of(context).size / 2;
     return ListView.builder(
-        itemCount: 5,
+        itemCount: 10,
         itemBuilder: (context, index) /*=> index == 0*/
 //          ? new SizedBox(
 ////        child: new InstaStories(),
 //              height: deviceSize.height * 0.15,
 //            )
-            /*:*/ {
+        /*:*/ {
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -240,7 +203,7 @@ class InstaList extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image:AssetImage('images/sex.jpeg'),
-                                      fit: BoxFit.contain,
+                                    fit: BoxFit.contain,
                                   ),
                                 ),
                                 height: MediaQuery.of(context).size.height / 5,
@@ -482,7 +445,16 @@ class InstaList extends StatelessWidget {
 //                padding: const EdgeInsets.symmetric(horizontal: 16.0),
 //                child: Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
 //              ),
-              FeedTypeB(),
+              FeedTypeB(
+                image: 'images/moms2be3.jpg',
+              ),
+              FeedTypeB(
+                image: 'images/moms2be.jpg',
+              ),
+              FeedTypeB(
+                image: 'images/moms2be2.jpg',
+              ),
+
             ],
           );
         });
@@ -490,6 +462,9 @@ class InstaList extends StatelessWidget {
 }
 
 class FeedTypeB extends StatelessWidget {
+  String image;
+
+  FeedTypeB({@required this.image});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -525,7 +500,7 @@ class FeedTypeB extends StatelessWidget {
           Flexible(
             fit: FlexFit.loose,
             child:  Image.asset(
-                "images/fertilitycare2.jpg"
+                image,
             ),
           ),
           Container(

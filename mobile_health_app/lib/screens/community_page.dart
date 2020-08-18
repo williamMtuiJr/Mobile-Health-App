@@ -5,6 +5,7 @@ import 'chat_groups_intro.dart';
 import 'my_home_page.dart';
 //import './../constants.dart';
 import './../components/stretched_toggle_button.dart';
+import 'chat_page.dart';
 
 class CommunityPage extends StatefulWidget {
   @override
@@ -97,7 +98,7 @@ class _CommunityPageState extends State<CommunityPage> {
             isSelected: isSelected,
           ),
           Flexible(
-            child: isSelected[0] ? MyHomePage() : ChatGroups(),
+            child: isSelected[0] ? MyHomePage() : ChatPage(),
           ),
         ],
       ),

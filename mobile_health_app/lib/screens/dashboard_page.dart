@@ -202,9 +202,9 @@ class CustomCard extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 10,
           width: double.infinity,
           child: ListTile(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
+//            shape: RoundedRectangleBorder(
+//              borderRadius: BorderRadius.circular(5.0),
+//            ),
             leading: image,
             title: Text(
               title,

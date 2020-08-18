@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          color: Colors.black87,
-          textTheme: TextTheme(
-            headline1: TextStyle(color: Colors.blue),
-          ),
-        ),
+//        appBarTheme: AppBarTheme(
+//          color: Colors.black87,
+//          textTheme: TextTheme(
+//            headline1: TextStyle(color: Colors.blue),
+//          ),
+//        ),
         buttonColor: kButtonColor,
 //        scaffoldBackgroundColor: kBackgroundColour,
         primarySwatch: Colors.blue,

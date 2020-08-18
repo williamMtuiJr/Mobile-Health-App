@@ -60,7 +60,7 @@ class ChoiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.headline4;
+//    final TextStyle textStyle = Theme.of(context).textTheme.headline4;
     return Card(
       color: Colors.white,
       child: Center(
@@ -68,8 +68,8 @@ class ChoiceCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Icon(choice.icon, size: 128.0, color: textStyle.color),
-            Text(choice.title, style: textStyle),
+            Icon(choice.icon, size: 128.0, ),
+            Text(choice.title, ),
           ],
         ),
       ),

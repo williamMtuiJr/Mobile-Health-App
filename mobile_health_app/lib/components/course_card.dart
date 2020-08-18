@@ -4,11 +4,15 @@ class CourseCard extends StatelessWidget {
 //  final Color color;
   final String text;
   final String url;
+  final String assetImagePath;
+  final Color textColour;
 
   CourseCard({
 //    @required this.color,
     @required this.text,
-    this.url,
+   this.url,
+  @required this.assetImagePath,
+  @required this.textColour,
   });
 
   @override
@@ -30,7 +34,7 @@ class CourseCard extends StatelessWidget {
                   ? NetworkImage(
                       url != null ? url : "images/chw_image.jpg",
                     )
-                  : AssetImage("images/chw_image.jpg"),
+                  : AssetImage(assetImagePath),
             ),
           ),
           child: Column(
@@ -45,7 +49,7 @@ class CourseCard extends StatelessWidget {
                 child: Text(
                   text,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: textColour,
                     fontSize: 16.0,
                   ),
                 ),

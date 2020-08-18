@@ -52,13 +52,13 @@ class _DiscussionsState extends State<Discussions> {
     ),
     //Load all available discussions
     ListTile(
-      tileColor: Colors.white,
+//      tileColor: Colors.white,
       leading: Icon(FontAwesomeIcons.venus),
       title: Text('Is it a boy or a girl?'),
       subtitle: Text('Yada, yada, yada, yada,yada'),
     ),
     ListTile(
-      tileColor: Colors.white70,
+//      tileColor: Colors.white70,
       leading: Icon(FontAwesomeIcons.baby),
       title: Text('How do i get time to sleep, arghh!'),
       subtitle: Text('Yada, yada, yada, yada,yada yada, yada'),

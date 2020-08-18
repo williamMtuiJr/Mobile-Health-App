@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     DashboardPage(),
 
-    PlansPage(),
+    //PlansPage(),
     Testing4(),
     MyHomePage(),
 //    CommunityPage(),
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
                 gap: 8,
-                activeColor: Colors.purple,
+                activeColor: Colors.green,
                 iconSize: 18,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 duration: Duration(milliseconds: 800),
@@ -73,10 +73,10 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.home,
                     text: 'Home',
                   ),
-                  GButton(
-                    icon: Icons.date_range,
-                    text: 'Plans',
-                  ),
+//                  GButton(
+//                    icon: Icons.date_range,
+//                    text: 'Plans',
+//                  ),
                   GButton(
                     icon: FontAwesomeIcons.map,
                     text: 'Insights',
